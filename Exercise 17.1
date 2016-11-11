@@ -1,0 +1,25 @@
+class Time(object):
+    """Represents the time of day.
+    attributes: hour, minute, second
+    """
+    def __init__(self, hour=0, minute=0, second=0):
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+
+    def increment(self, seconds):
+        time = Time()
+        time.hour = self.hour
+        time.second = self.second
+        time.minute = self.minute
+
+        time.second += seconds
+        if time.second >= 60:
+            minute = time.second / 60
+            time.minute += minute
+            time.second -= minute * 60
+        if time.minute >= 60:
+            hour = time.minute / 60
+            time.hour += hour
+            time.minute -= hour * 60
+        print('%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second))
