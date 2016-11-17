@@ -6,10 +6,10 @@ class Point(object):
     def __str__(self):
         return 'the x value is: %.d and the y value is: %.d' % (self.x, self.y)
 
-    def increment_by(self, a=0, b=0):
+    def add(self, a=0, b=0):
         self.x += a
         self.y += b
 
 point = Point(1, 1)
-point.increment_by(2, 4)
+point.add(2, 4)
 print(point)
